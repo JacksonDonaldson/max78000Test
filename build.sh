@@ -1,5 +1,5 @@
 docker build -t build-max-test .
 
-mkdir build
+mkdir -p build
 
 docker run --rm -v ./build:/out -v ./program:/program build-max-test
