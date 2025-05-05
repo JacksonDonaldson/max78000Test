@@ -15,6 +15,7 @@
 
 # This example is only compatible with the FTHR board,
 # so we override the BOARD value to hard-set it.
+MAXIM_PATH=./msdk-2024_02
 override BOARD=FTHR_RevA
 MFLOAT_ABI=soft
 
@@ -25,7 +26,7 @@ VPATH+=src/
 
 # ****************** eCTF Bootloader *******************
 # DO NOT REMOVE
-LINKERFILE=firmware.ld
-STARTUPFILE=startup_firmware.S
-ENTRY=firmware_startup
+#LINKERFILE=firmware.ld
+#STARTUPFILE=startup_firmware.S
+#ENTRY=firmware_startup
 
