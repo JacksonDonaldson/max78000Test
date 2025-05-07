@@ -386,5 +386,50 @@ FIFO: 00000000
 DMA:  00000000
 WKEN: 00000000
 WKFL: 00000000
+t
+Test TRNG
+CTRL:   00000000
+STATUS: 00000001
+DATA:   0ba5381d
+
+after init
+CTRL:   00000000
+STATUS: 00000001
+DATA:   dbd4005c
+
+random data: 6e9cf333
+random data: 76f60eea
+random data: 1438fb0f
+random data: 09f92a8b
+random data: 46f9ab06
+after random
+CTRL:   00000000
+STATUS: 00000001
+DATA:   3b47369b
+
+after shutdown
+CTRL:   00000000
+STATUS: 00000001
+DATA:   9987ae74
+
+async rng:
+CTRL:   00000000
+STATUS: 00000001
+DATA:   b7f47acb
+
+trng callback: 0
+random data: 194d8421
+trng callback: 0
+random data: 1c47c58d
+trng callback: 0
+random data: 9fe405ba
+trng callback: 0
+random data: aa9fbac9
+trng callback: 0
+random data: f216b28b
+after shutdown
+CTRL:   00000000
+STATUS: 00000001
+DATA:   e86ba5e1
 
 

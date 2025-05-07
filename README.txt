@@ -50,3 +50,7 @@ Known differences between QEMU and hardware output:
         clkctrl bit 15 is a 0 in qemu but a 1 in hardware; this is a reserved field
         clkctrl bits 25-29 occasionally differ; for simplicity, qemu reports all clocks as ready all the time
         pclkdis1 bit 11 is a 1 in qemu but a 0 in hardware; this is a reserved field
+
+    TRNG:
+        qemu TRNG is always active, while hardware requires initialization.
+        

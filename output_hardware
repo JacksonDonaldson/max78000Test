@@ -377,5 +377,49 @@ FIFO: 00000000
 DMA:  00000000                                                                                
 WKEN: 00000000                                                                                
 WKFL: 00000000                                                                                
+Test TRNG
+CTRL:   00000000
+STATUS: 00000000
+DATA:   00000000
+
+after init
+CTRL:   00000000
+STATUS: 00000000
+DATA:   00000000
+
+random data: d734659b                                                                         
+random data: bf298f2a                                                                         
+random data: d8b6710d                                                                         
+random data: 38ef71ad                                                                         
+random data: 1cc466a4                                                                         
+after random                                                                                  
+CTRL:   00000000                                                                              
+STATUS: 00000001                                                                              
+DATA:   4fcd6106                                                                              
                                                                                               
+after shutdown                                                                                
+CTRL:   00000000                                                                              
+STATUS: 00000000                                                                              
+DATA:   00000000                                                                              
+                                                                                              
+async rng:                                                                                    
+CTRL:   00000000                                                                              
+STATUS: 00000001                                                                              
+DATA:   df0d34b7                                                                              
+                                                                                              
+trng callback: 0                                                                              
+waiting                                                                                       
+random data: 49dd32e8                                                                         
+trng callback: 0                                                                              
+random data: fd0e2057                                                                         
+trng callback: 0                                                                              
+random data: f36294fb                                                                         
+trng callback: 0                                                                              
+random data: f57618ea                                                                         
+trng callback: 0                                                                              
+random data: 28debf32                                                                         
+after shutdown                                                                                
+CTRL:   00000000                                                                              
+STATUS: 00000000                                                                              
+DATA:   00000000                                                                                             
 

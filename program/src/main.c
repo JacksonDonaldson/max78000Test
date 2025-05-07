@@ -57,6 +57,13 @@ void print_gcr_state(){
 
 }
 
+void print_trng_state(){
+    char* base_addr = (char*) 0x4004d000;
+    printf("CTRL:   %08x\n", reg(base_addr, 0));
+    printf("STATUS: %08x\n", reg(base_addr, 4));
+    printf("DATA:   %08x\n", reg(base_addr, 8));
+    printf("\n");
+}
 void test_icc(){
     printf("Post-boot ICC0:\n");
     print_icc_state((char*)(0x4002a000));
@@ -136,15 +143,53 @@ void test_mem_reset(uint* addr, uint reset){
     printf("value after memz: %08x\n", *addr);
 }
 
+void TRNG_IRQHandler(void)
+{
+    MXC_TRNG_Handler();
+}
+
+volatile int wait;
+void trng_callback(void *req, int result)
+{
+    printf("trng callback: %d\n", result);
+    wait = 0;
+}
+
 void test_trng(){
+    uint data;
+
+    print_trng_state();
     MXC_TRNG_Init();
+    printf("after init\n");
+    print_trng_state();
 
     for (int i = 0; i < 5; i++){
-        uint data;
+        
         MXC_TRNG_Random((unsigned char *)&data, 4);
         printf("random data: %08x\n", data);
     }
+    printf("after random\n");
+    print_trng_state();
+
     MXC_TRNG_Shutdown();
+    printf("after shutdown\n");
+    print_trng_state();
+
+    printf("async rng:\n");
+    MXC_TRNG_Init();
+    print_trng_state();
+
+    wait = 1;
+    NVIC_EnableIRQ(TRNG_IRQn);
+    for(int i = 0; i < 5; i++){
+        MXC_TRNG_RandomAsync((unsigned char *)&data, 4, &trng_callback);
+        while(wait){printf("waiting\n");}
+        printf("random data: %08x\n", data);
+    }
+    MXC_TRNG_Shutdown();
+    printf("after shutdown\n");
+    print_trng_state();
+
 }
 
 int main(){    
