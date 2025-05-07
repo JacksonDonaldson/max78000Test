@@ -5,6 +5,8 @@
 #include "mxc_delay.h"
 #include "led.h"
 #include "trng.h"
+#include "aes.h"
+
 typedef unsigned int uint;
 
 #define reg(base, offset) (*(uint*) (base + offset))
@@ -64,6 +66,17 @@ void print_trng_state(){
     printf("DATA:   %08x\n", reg(base_addr, 8));
     printf("\n");
 }
+
+void print_aes_state(){
+    char* base_addr = (char*) 0x40007400;
+    printf("CTRL:   %08x\n", reg(base_addr, 0));
+    printf("STATUS: %08x\n", reg(base_addr, 4));
+    printf("INTFL:  %08x\n", reg(base_addr, 8));
+    printf("INTEN:  %08x\n", reg(base_addr, 0xc));
+    printf("FIFO:   %08x\n", reg(base_addr, 0x10));
+    printf("\n");
+}
+
 void test_icc(){
     printf("Post-boot ICC0:\n");
     print_icc_state((char*)(0x4002a000));
@@ -192,6 +205,63 @@ void test_trng(){
 
 }
 
+void AES_encrypt(mxc_aes_keys_t key, uint32_t* data, uint32_t* encrypted, uint len)
+{
+    mxc_aes_req_t req;
+    req.length = len;
+    req.inputData = data;
+    req.resultData = encrypted;
+    req.keySize = key;
+    req.encryption = MXC_AES_ENCRYPT_EXT_KEY;
+
+    MXC_AES_Encrypt(&req);
+}
+
+void AES_decrypt(mxc_aes_keys_t key, uint32_t* data, uint32_t* decrypted, uint len)
+{
+    mxc_aes_req_t req;
+    req.length = len;
+    req.inputData = data;
+    req.resultData = decrypted;
+    req.keySize = key;
+    req.encryption = MXC_AES_DECRYPT_INT_KEY;
+
+    MXC_AES_Decrypt(&req);
+}
+
+void single_aes_test(uint keytype){
+    uint8_t key[32] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+                            0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
+                            0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17,
+                            0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f};
+    MXC_AES_SetExtKey(key, keytype);
+    uint8_t data[16] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77,
+                            0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff};
+    uint32_t encrypted[4] = {0};
+    uint32_t decrypted[4] = {1,2,3,4};
+    AES_encrypt(keytype, (uint32_t*)data, encrypted, 4);
+    printf("encrypted to : %08x %08x %08x %08x\n", encrypted[0], encrypted[1], encrypted[2], encrypted[3]);
+
+    //MXC_AES_SetExtKey(key, keylen);
+    //print_aes_state();
+    AES_decrypt(keytype, encrypted, decrypted, 4);
+    printf("decrypted to : %08x %08x %08x %08x\n", decrypted[0], decrypted[1], decrypted[2], decrypted[3]);
+
+}
+void test_aes(){
+    print_aes_state();
+    MXC_AES_Init();
+    printf("after init\n");
+    print_aes_state();
+    single_aes_test(MXC_AES_128BITS);
+    //print_aes_state();
+    single_aes_test(MXC_AES_192BITS);
+    //print_aes_state();
+    single_aes_test(MXC_AES_256BITS);
+    print_aes_state();
+    printf("AES test done\n");
+}
+
 int main(){    
     printf("started\n");
     
@@ -252,7 +322,13 @@ int main(){
         case 't':
             printf("Test TRNG\n");
             test_trng();
+        
+            break;
 
+        case 'a':
+            printf("Test aes\n");
+            test_aes();
+            break;
         default:
             break;
         }
