@@ -254,8 +254,10 @@ void test_aes(){
     printf("after init\n");
     print_aes_state();
     single_aes_test(MXC_AES_128BITS);
-    //print_aes_state();
+    print_aes_state();
+    MXC_AES_Init();
     single_aes_test(MXC_AES_192BITS);
+    MXC_AES_Init();
     //print_aes_state();
     single_aes_test(MXC_AES_256BITS);
     print_aes_state();

@@ -422,4 +422,36 @@ after shutdown
 CTRL:   00000000                                                                              
 STATUS: 00000000                                                                              
 DATA:   00000000                                                                                             
-
+Test aes                                                                                                                       
+CTRL:   00000000                                                                                                               
+STATUS: 0000000a                                                                                                               
+INTFL:  00000000                                                                                                               
+INTEN:  00000000                                                                                                               
+FIFO:   00000000                                                                                                               
+                                                                                                                               
+after init                                                                                                                     
+CTRL:   00000001                                                                                                               
+STATUS: 0000000a                                                                                                               
+INTFL:  00000000                                                                                                               
+INTEN:  00000000                                                                                                               
+FIFO:   00000000                                                                                                               
+                                                                                                                               
+encrypted to : d8e0c469 30047b6a 80b7cdd8 5ac5b470                                                                             
+decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                             
+CTRL:   00000201                                                                                                               
+STATUS: 0000000a                                                                                                               
+INTFL:  00000000                                                                                                               
+INTEN:  00000000                                                                                                               
+FIFO:   00112233                                                                                                               
+                                                                                                                               
+encrypted to : a47ca9dd e0df4c86 a070af6e 91710dec                                                                             
+decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                             
+encrypted to : cab7a28e bf456751 9049fcea 8960494b                                                                             
+decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                             
+CTRL:   00000281                                                                                                               
+STATUS: 0000000a                                                                                                               
+INTFL:  00000000                                                                                                               
+INTEN:  00000000                                                                                                               
+FIFO:   00112233                                                                                                               
+                                                                                                                               
+AES test done  

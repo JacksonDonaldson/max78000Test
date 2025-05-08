@@ -33,6 +33,7 @@ Sample output logs from QEMU and hardware are stored in output_QEMU and output_h
 Known differences between QEMU and hardware output:
 
     Operations that may take some time in hardware occur instantly.
+    registers are always active, while hardware requires initialization.
 
     ICC:
         bit 7 of icc_ctrl is a 1 in hardware after disabling the cache but not in qemu. This field is marked reserved in the user guide.
@@ -52,5 +53,10 @@ Known differences between QEMU and hardware output:
         pclkdis1 bit 11 is a 1 in qemu but a 0 in hardware; this is a reserved field
 
     TRNG:
-        qemu TRNG is always active, while hardware requires initialization.
+        
+
+    AES:
+        Interrupts are not implemented, so async AES calculations won't work.
+        FIFO returns 0 when empty in QEMU, and the last result in hardware.
+        
         
