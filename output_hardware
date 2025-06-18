@@ -1,457 +1,322 @@
-Starting UART0: 
-CTRL: 000a8c01
-STAT: 00008091
-INTE: 00000000
-INTF: 00000000
-CLKD: 00000040
-OSR:  00000005
-TXPE: 00000030
-PNR:  00000003
-FIFO: 00000000
-DMA:  00000000
-WKEN: 00000000
-WKFL: 00000000
-
-Initializin�ѕ�initializing UART0
-CTRL: 00088c01                                                                                
-STAT: 00008091                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000030                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-read char a                                                                                   
-Starting UART1:                                                                               
-CTRL: 00000000                                                                                
-STAT: 00000000                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000000                                                                                
-OSR:  00000000                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000000                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializing UART1                                                                            
-after initializing UART1                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00000050                                                                                
-INTE: 00000000                                                                                
-INTF: 00000004                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000002                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Starting UART2:                                                                               
-CTRL: 00000000                                                                                
-STAT: 00000000                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000000                                                                                
-OSR:  00000000                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000000                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializing UART2                                                                            
-after initializing UART2                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00000140                                                                                
-INTE: 00000000                                                                                
-INTF: 00000015                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000002                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-default UART0 freq: 001c2b8                                                                   
-set UART0 freq: 00002580                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00008091                                                                                
-INTE: 00000000                                                                                
-INTF: 00000070                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000030                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Post-boot ICC0:                                                                               
-INFO: 00000000                                                                                
-SZ:   10000010                                                                                
-CTRL: 00010001                                                                                
-IVAL: 00000000                                                                                
-                                                                                              
-Enabled ICC0:                                                                                 
-INFO: 00000000                                                                                
-SZ:   10000010                                                                                
-CTRL: 00010001                                                                                
-IVAL: 00000000                                                                                
-                                                                                              
-Disabled ICC0:                                                                                
-INFO: 00000000                                                                                
-SZ:   10000010                                                                                
-CTRL: 00010080                                                                                
-IVAL: 00000000                                                                                
-                                                                                              
-GCR state:                                                                                    
-SYSCTRL: 00021002                                                                             
-RST0:    00000000                                                                             
-CLKCTRL: 3414a008                                                                             
-PM:      0003f000                                                                             
-PCLKDIV: 00000000                                                                             
-PCLKDIS0:fffff9fc                                                                             
-MEMCTRL: 00000005                                                                             
-MEMZ:    00000000                                                                             
-SYSST:   00000000                                                                             
-RST1:    00000000                                                                             
-PCLKDIS1:fffff7fd                                                                             
-EVENTEN: 00000000                                                                             
-REVISIO: 000000a1                                                                             
-SYSIE:   00000000                                                                             
-ECCERR:  00000000                                                                             
-ECCCED:  00000000                                                                             
-ECCIE:   00000000                                                                             
-ECCADDR: 00000000                                                                             
-moving to main loop                                                                           
-Starting UART0:                                                                               
-CTRL: 000a8c01                                                                                
-STAT: 00008091                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000040                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000030                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializin�ѕ�initializing UART0                                                              
-CTRL: 00088c01                                                                                
-STAT: 00008091                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000030                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-read char a                                                                                   
-Starting UART1:                                                                               
-CTRL: 00000000                                                                                
-STAT: 00000000                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000000                                                                                
-OSR:  00000000                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000000                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializing UART1                                                                            
-after initializing UART1                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00000050                                                                                
-INTE: 00000000                                                                                
-INTF: 00000004                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000002                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Starting UART2:                                                                               
-CTRL: 00000000                                                                                
-STAT: 00000000                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000000                                                                                
-OSR:  00000000                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000000                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializing UART2                                                                            
-after initializing UART2                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00000140                                                                                
-INTE: 00000000                                                                                
-INTF: 00000015                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000002                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-default UART0 freq: 001c2b8                                                                   
-set UART0 freq: 00002580                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00008091                                                                                
-INTE: 00000000                                                                                
-INTF: 00000070                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000030                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Post-boot ICC0:                                                                               
-INFO: 00000000                                                                                
-SZ:   10000010                                                                                
-CTRL: 00010001                                                                                
-IVAL: 00000000                                                                                
-                                                                                              
-Enabled ICC0:                                                                                 
-INFO: 00000000                                                                                
-SZ:   10000010                                                                                
-CTRL: 00010001                                                                                
-IVAL: 00000000                                                                                
-                                                                                              
-Disabled ICC0:                                                                                
-INFO: 00000000                                                                                
-SZ:   10000010                                                                                
-CTRL: 00010080                                                                                
-IVAL: 00000000                                                                                
-                                                                                              
-GCR state:                                                                                    
-SYSCTRL: 00021002                                                                             
-RST0:    00000000                                                                             
-CLKCTRL: 3414a008                                                                             
-PM:      0003f000                                                                             
-PCLKDIV: 00000000                                                                             
-PCLKDIS0:fffff9fc                                                                             
-MEMCTRL: 00000005                                                                             
-MEMZ:    00000000                                                                             
-SYSST:   00000000                                                                             
-RST1:    00000000                                                                             
-PCLKDIS1:fffff7fd                                                                             
-EVENTEN: 00000000                                                                             
-REVISIO: 000000a1                                                                             
-SYSIE:   00000000                                                                             
-ECCERR:  00000000                                                                             
-ECCCED:  00000000                                                                             
-ECCIE:   00000000                                                                             
-ECCADDR: 00000000                                                                             
-moving to main loop                                                                           
-Initial gcr state:                                                                            
-SYSCTRL: 00021002                                                                             
-RST0:    00000000                                                                             
-CLKCTRL: 3414a008                                                                             
-PM:      0003f000                                                                             
-PCLKDIV: 00000000                                                                             
-PCLKDIS0:fffff9fc                                                                             
-MEMCTRL: 00000005                                                                             
-MEMZ:    00000000                                                                             
-SYSST:   00000000                                                                             
-RST1:    00000000                                                                             
-PCLKDIS1:fffff7fd                                                                             
-EVENTEN: 00000000                                                                             
-REVISIO: 000000a1                                                                             
-SYSIE:   00000000                                                                             
-ECCERR:  00000000                                                                             
-ECCCED:  00000000                                                                             
-ECCIE:   00000000                                                                             
-ECCADDR: 0�����                                                                               
-               Final gcr state:                                                               
-SYSCTRL: 00021002                                                                             
-RST0:    00000000                                                                             
-CLKCTRL: 3c1ca008                                                                             
-PM:      0003f000                                                                             
-PCLKDIV: 00000000                                                                             
-PCLKDIS0:fffff9fc                                                                             
-MEMCTRL: 00000005                                                                             
-MEMZ:    00000000                                                                             
-SYSST:   00000000                                                                             
-RST1:    00000000                                                                             
-PCLKDIS1:fffff7fd                                                                             
-EVENTEN: 00000000                                                                             
-REVISIO: 000000a1                                                                             
-SYSIE:   00000000                                                                             
-ECCERR:  00000000                                                                             
-ECCCED:  00000000                                                                             
-ECCIE:   00000000                                                                             
-ECCADDR: 00000000                                                                             
-ram1initial value: 12345678                                                                   
-value after memz: 00000000                                                                    
-ram2initial value: 12345678                                                                   
-value after memz: 00000000                                                                    
-Starting UART1:                                                                               
-CTRL: 00000000                                                                                
-STAT: 00000050                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000000                                                                                
-OSR:  00000000                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializing UART1                                                                            
-after initializing UART1                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00000050                                                                                
-INTE: 00000000                                                                                
-INTF: 00000004                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000002                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Starting UART2:                                                                               
-CTRL: 00000000                                                                                
-STAT: 00000050                                                                                
-INTE: 00000000                                                                                
-INTF: 00000000                                                                                
-CLKD: 00000000                                                                                
-OSR:  00000000                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000003                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-                                                                                              
-Initializing UART2                                                                            
-after initializing UART2                                                                      
-CTRL: 00088c01                                                                                
-STAT: 00000140                                                                                
-INTE: 00000000                                                                                
-INTF: 00000015                                                                                
-CLKD: 00000104                                                                                
-OSR:  00000005                                                                                
-TXPE: 00000000                                                                                
-PNR:  00000002                                                                                
-FIFO: 00000000                                                                                
-DMA:  00000000                                                                                
-WKEN: 00000000                                                                                
-WKFL: 00000000                                                                                
-Test TRNG
-CTRL:   00000000
-STATUS: 00000000
-DATA:   00000000
-
-after init
-CTRL:   00000000
-STATUS: 00000000
-DATA:   00000000
-
-random data: d734659b                                                                         
-random data: bf298f2a                                                                         
-random data: d8b6710d                                                                         
-random data: 38ef71ad                                                                         
-random data: 1cc466a4                                                                         
-after random                                                                                  
-CTRL:   00000000                                                                              
-STATUS: 00000001                                                                              
-DATA:   4fcd6106                                                                              
-                                                                                              
-after shutdown                                                                                
-CTRL:   00000000                                                                              
-STATUS: 00000000                                                                              
-DATA:   00000000                                                                              
-                                                                                              
-async rng:                                                                                    
-CTRL:   00000000                                                                              
-STATUS: 00000001                                                                              
-DATA:   df0d34b7                                                                              
-                                                                                              
-trng callback: 0                                                                              
-waiting                                                                                       
-random data: 49dd32e8                                                                         
-trng callback: 0                                                                              
-random data: fd0e2057                                                                         
-trng callback: 0                                                                              
-random data: f36294fb                                                                         
-trng callback: 0                                                                              
-random data: f57618ea                                                                         
-trng callback: 0                                                                              
-random data: 28debf32                                                                         
-after shutdown                                                                                
-CTRL:   00000000                                                                              
-STATUS: 00000000                                                                              
-DATA:   00000000                                                                                             
-Test aes                                                                                                                       
-CTRL:   00000000                                                                                                               
-STATUS: 0000000a                                                                                                               
-INTFL:  00000000                                                                                                               
-INTEN:  00000000                                                                                                               
-FIFO:   00000000                                                                                                               
-                                                                                                                               
-after init                                                                                                                     
-CTRL:   00000001                                                                                                               
-STATUS: 0000000a                                                                                                               
-INTFL:  00000000                                                                                                               
-INTEN:  00000000                                                                                                               
-FIFO:   00000000                                                                                                               
-                                                                                                                               
-encrypted to : d8e0c469 30047b6a 80b7cdd8 5ac5b470                                                                             
-decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                             
-CTRL:   00000201                                                                                                               
-STATUS: 0000000a                                                                                                               
-INTFL:  00000000                                                                                                               
-INTEN:  00000000                                                                                                               
-FIFO:   00112233                                                                                                               
-                                                                                                                               
-encrypted to : a47ca9dd e0df4c86 a070af6e 91710dec                                                                             
-decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                             
-encrypted to : cab7a28e bf456751 9049fcea 8960494b                                                                             
-decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                             
-CTRL:   00000281                                                                                                               
-STATUS: 0000000a                                                                                                               
-INTFL:  00000000                                                                                                               
-INTEN:  00000000                                                                                                               
-FIFO:   00112233                                                                                                               
-                                                                                                                               
+started
+Test gcr:
+SYSCTRL: 00021002
+RST0:    00000000
+CLKCTRL: 3414a008
+PM:      0003f000
+PCLKDIV: 00000000
+PCLKDIS0:fffffdfc
+MEMCTRL: 00000005
+MEMZ:    00000000
+SYSST:   00000000
+RST1:    00000000
+PCLKDIS1:fffff7ff
+EVENTEN: 00000000
+REVISIO: 000000a1
+SYSIE:   00000000                                                                                                 
+ECCERR:  00000000                                                                                                 
+ECCCED:  00000000                                                                                                 
+ECCIE:   00000000                                                                                                 
+ECCADDR: 00000000                                                                                                 
+Initial gcr state:                                                                                                
+SYSCTRL: 00021002                                                                                                 
+RST0:    00000000                                                                                                 
+CLKCTRL: 3414a008                                                                                                 
+PM:      0003f000                                                                                                 
+PCLKDIV: 00000000                                                                                                 
+PCLKDIS0:fffffdfc                                                                                                 
+MEMCTRL: 00000005                                                                                                 
+MEMZ:    00000000                                                                                                 
+SYSST:   00000000                                                                                                 
+RST1:    00000000                                                                                                 
+PCLKDIS1:fffff7ff                                                                                                 
+EVENTEN: 00000000                                                                                                 
+REVISIO: 000000a1                                                                                                 
+SYSIE:   00000000                                                                                                 
+ECCERR:  00000000                                                                                                 
+ECCCED:  00000000                                                                                                 
+ECCIE:   00000000                                                                                                 
+ECCADDR: 00000000                                                                                                 
+Final gcr state:                                                                                                  
+SYSCTRL: 00021002                                                                                                 
+RST0:    00000000                                                                                                 
+CLKCTRL: 3c1ca008                                                                                                 
+PM:      0003f000                                                                                                 
+PCLKDIV: 00000000                                                                                                 
+PCLKDIS0:fffffdfc                                                                                                 
+MEMCTRL: 00000005                                                                                                 
+MEMZ:    00000000                                                                                                 
+SYSST:   00000000                                                                                                 
+RST1:    00000000                                                                                                 
+PCLKDIS1:fffff7ff                                                                                                 
+EVENTEN: 00000000                                                                                                 
+REVISIO: 000000a1                                                                                                 
+SYSIE:   00000000                                                                                                 
+ECCERR:  00000000                                                                                                 
+ECCCED:  00000000                                                                                                 
+ECCIE:   00000000                                                                                                 
+ECCADDR: 00000000                                                                                                 
+Test ICC:                                                                                                         
+Post-boot ICC0:                                                                                                   
+INFO: 00000000                                                                                                    
+SZ:   10000010                                                                                                    
+CTRL: 00010001                                                                                                    
+IVAL: 00000000                                                                                                    
+                                                                                                                  
+Enabled ICC0:                                                                                                     
+INFO: 00000000                                                                                                    
+SZ:   10000010                                                                                                    
+CTRL: 00010081                                                                                                    
+IVAL: 00000000                                                                                                    
+                                                                                                                  
+Disabled ICC0:                                                                                                    
+INFO: 00000000                                                                                                    
+SZ:   10000010                                                                                                    
+CTRL: 00010000                                                                                                    
+IVAL: 00000000                                                                                                    
+                                                                                                                  
+started                                                                                                           
+Test uart                                                                                                         
+Starting UART0:                                                                                                   
+CTRL: 000a8c01                                                                                                    
+STAT: 00008091                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000070                                                                                                    
+CLKD: 00000040                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000030                                                                                                    
+PNR:  00000003                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Initializin�ѕ�initializing UART0                                                                                  
+CTRL: 00088c01                                                                                                    
+STAT: 00008091                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000040                                                                                                    
+CLKD: 00000104                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000030                                                                                                    
+PNR:  00000003                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+read char u                                                                                                       
+Starting UART1:                                                                                                   
+CTRL: 00000000                                                                                                    
+STAT: 00000000                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000000                                                                                                    
+CLKD: 00000000                                                                                                    
+OSR:  00000000                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000000                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Initializing UART1                                                                                                
+after initializing UART1                                                                                          
+CTRL: 00088c01                                                                                                    
+STAT: 00000050                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000004                                                                                                    
+CLKD: 00000104                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000002                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Starting UART2:                                                                                                   
+CTRL: 00000000                                                                                                    
+STAT: 00000000                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000000                                                                                                    
+CLKD: 00000000                                                                                                    
+OSR:  00000000                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000000                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Initializing UART2                                                                                                
+after initializing UART2                                                                                          
+CTRL: 00088c01                                                                                                    
+STAT: 00000140                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000015                                                                                                    
+CLKD: 00000104                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000002                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+default UART0 freq: 001c2b8                                                                                       
+set UART0 freq: 00002580                                                                                          
+CTRL: 00088c01                                                                                                    
+STAT: 00008091                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000070                                                                                                    
+CLKD: 00000104                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000030                                                                                                    
+PNR:  00000003                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Starting UART1:                                                                                                   
+CTRL: 00000000                                                                                                    
+STAT: 00000050                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000000                                                                                                    
+CLKD: 00000000                                                                                                    
+OSR:  00000000                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000003                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Initializing UART1                                                                                                
+after initializing UART1                                                                                          
+CTRL: 00088c01                                                                                                    
+STAT: 00000050                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000004                                                                                                    
+CLKD: 00000104                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000002                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Starting UART2:                                                                                                   
+CTRL: 00000000                                                                                                    
+STAT: 00000050                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000000                                                                                                    
+CLKD: 00000000                                                                                                    
+OSR:  00000000                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000003                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+Initializing UART2                                                                                                
+after initializing UART2                                                                                          
+CTRL: 00088c01                                                                                                    
+STAT: 00000140                                                                                                    
+INTE: 00000000                                                                                                    
+INTF: 00000015                                                                                                    
+CLKD: 00000104                                                                                                    
+OSR:  00000005                                                                                                    
+TXPE: 00000000                                                                                                    
+PNR:  00000002                                                                                                    
+FIFO: 00000000                                                                                                    
+DMA:  00000000                                                                                                    
+WKEN: 00000000                                                                                                    
+WKFL: 00000000                                                                                                    
+                                                                                                                  
+ram1initial value: 12345678                                                                                       
+value after memz: 00000000                                                                                        
+ram2initial value: 12345678                                                                                       
+value after memz: 00000000                                                                                        
+Test TRNG                                                                                                         
+CTRL:   00000000                                                                                                  
+STATUS: 00000000                                                                                                  
+DATA:   00000000                                                                                                  
+                                                                                                                  
+after init                                                                                                        
+CTRL:   00000000                                                                                                  
+STATUS: 00000000                                                                                                  
+DATA:   00000000                                                                                                  
+                                                                                                                  
+random data: 80b3fd41                                                                                             
+random data: f7c0c478                                                                                             
+random data: dbed325b                                                                                             
+random data: be431f03                                                                                             
+random data: b3423bcc                                                                                             
+after random                                                                                                      
+CTRL:   00000000                                                                                                  
+STATUS: 00000001                                                                                                  
+DATA:   3f734d8a                                                                                                  
+                                                                                                                  
+after shutdown                                                                                                    
+CTRL:   00000000                                                                                                  
+STATUS: 00000000                                                                                                  
+DATA:   00000000                                                                                                  
+                                                                                                                  
+async rng:                                                                                                        
+CTRL:   00000000                                                                                                  
+STATUS: 00000001                                                                                                  
+DATA:   02eb9501                                                                                                  
+                                                                                                                  
+trng callback: 0                                                                                                  
+waiting                                                                                                           
+random data: 4724b032                                                                                             
+trng callback: 0                                                                                                  
+random data: 7d8d6d10                                                                                             
+trng callback: 0                                                                                                  
+random data: 82418d16                                                                                             
+trng callback: 0                                                                                                  
+random data: f8acf3c2                                                                                             
+trng callback: 0                                                                                                  
+random data: 9b6d1d7a                                                                                             
+after shutdown                                                                                                    
+CTRL:   00000000                                                                                                  
+STATUS: 00000000                                                                                                  
+DATA:   00000000                                                                                                  
+                                                                                                                  
+Test aes                                                                                                          
+CTRL:   00000000                                                                                                  
+STATUS: 0000000a                                                                                                  
+INTFL:  00000000                                                                                                  
+INTEN:  00000000                                                                                                  
+FIFO:   00000000                                                                                                  
+                                                                                                                  
+after init                                                                                                        
+CTRL:   00000001                                                                                                  
+STATUS: 0000000a                                                                                                  
+INTFL:  00000000                                                                                                  
+INTEN:  00000000                                                                                                  
+FIFO:   00000000                                                                                                  
+                                                                                                                  
+encrypted to : d8e0c469 30047b6a 80b7cdd8 5ac5b470                                                                
+decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                
+CTRL:   00000201                                                                                                  
+STATUS: 0000000a                                                                                                  
+INTFL:  00000000                                                                                                  
+INTEN:  00000000                                                                                                  
+FIFO:   00112233                                                                                                  
+                                                                                                                  
+encrypted to : a47ca9dd e0df4c86 a070af6e 91710dec                                                                
+decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                
+encrypted to : cab7a28e bf456751 9049fcea 8960494b                                                                
+decrypted to : 33221100 77665544 bbaa9988 ffeeddcc                                                                
+CTRL:   00000281                                                                                                  
+STATUS: 0000000a                                                                                                  
+INTFL:  00000000                                                                                                  
+INTEN:  00000000                                                                                                  
+FIFO:   00112233                                                                                                  
+                                                                                                                  
 AES test done  

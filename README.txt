@@ -14,7 +14,7 @@ Flashing to a real board:
 
 Run test:
     QEMU:
-        qemu-system-arm -machine max78000fthr -kernel max78000.bin -device loader,file=max78000.bin,,addr=0x10000000 -serial tcp::4444,server
+        qemu-system-arm -machine max78000fthr -kernel max78000.bin -device loader,file=max78000.bin,addr=0x10000000 -serial tcp::4444,server
 
         Then to get output:
             nc localhost 4444
@@ -34,6 +34,7 @@ Known differences between QEMU and hardware output:
 
     Operations that may take some time in hardware occur instantly.
     registers are always active, while hardware requires initialization.
+    DMA is not implemented
 
     ICC:
         bit 7 of icc_ctrl is a 1 in hardware after disabling the cache but not in qemu. This field is marked reserved in the user guide.
@@ -58,5 +59,7 @@ Known differences between QEMU and hardware output:
     AES:
         Interrupts are not implemented, so async AES calculations won't work.
         FIFO returns 0 when empty in QEMU, and the last result in hardware.
+
+    
         
         

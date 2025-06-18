@@ -6,11 +6,15 @@
 #include "led.h"
 #include "trng.h"
 #include "aes.h"
+#include "crc.h"
+#include "flc.h"
+#include "nvic_table.h"
 
 typedef unsigned int uint;
 
 #define reg(base, offset) (*(uint*) (base + offset))
 #define UART_BAUD 115200
+#define TEST_ADDRESS (MXC_FLASH_MEM_BASE + MXC_FLASH_MEM_SIZE) - (1 * MXC_FLASH_PAGE_SIZE)
 
 void print_icc_state(char* base_addr){
     printf("INFO: %08x\n", reg(base_addr, 0));
@@ -74,6 +78,15 @@ void print_aes_state(){
     printf("INTFL:  %08x\n", reg(base_addr, 8));
     printf("INTEN:  %08x\n", reg(base_addr, 0xc));
     printf("FIFO:   %08x\n", reg(base_addr, 0x10));
+    printf("\n");
+}
+
+void print_crc_state(){
+    char* base_addr = (char*) 0x4000f000;
+    printf("CTRL:   %08x\n", reg(base_addr, 0));
+    printf("DATAIN: %08x\n", reg(base_addr, 4));
+    printf("POLY:   %08x\n", reg(base_addr, 8));
+    printf("VAL:    %08x\n", reg(base_addr, 0xc));
     printf("\n");
 }
 
@@ -161,6 +174,7 @@ void TRNG_IRQHandler(void)
     MXC_TRNG_Handler();
 }
 
+
 volatile int wait;
 void trng_callback(void *req, int result)
 {
@@ -169,7 +183,7 @@ void trng_callback(void *req, int result)
 }
 
 void test_trng(){
-    uint data;
+    uint data[2];
 
     print_trng_state();
     MXC_TRNG_Init();
@@ -178,8 +192,8 @@ void test_trng(){
 
     for (int i = 0; i < 5; i++){
         
-        MXC_TRNG_Random((unsigned char *)&data, 4);
-        printf("random data: %08x\n", data);
+        MXC_TRNG_Random((unsigned char *)data, 8);
+        printf("random data: %08x %08x\n", data[0], data[1]);
     }
     printf("after random\n");
     print_trng_state();
@@ -195,9 +209,9 @@ void test_trng(){
     wait = 1;
     NVIC_EnableIRQ(TRNG_IRQn);
     for(int i = 0; i < 5; i++){
-        MXC_TRNG_RandomAsync((unsigned char *)&data, 4, &trng_callback);
+        MXC_TRNG_RandomAsync((unsigned char *)data, 8, &trng_callback);
         while(wait){printf("waiting\n");}
-        printf("random data: %08x\n", data);
+        printf("random data: %08x %08x\n", data[0], data[1]);
     }
     MXC_TRNG_Shutdown();
     printf("after shutdown\n");
@@ -264,6 +278,129 @@ void test_aes(){
     printf("AES test done\n");
 }
 
+void test_crc(){
+    print_crc_state();
+    MXC_CRC_Init();
+
+    static uint32_t len = 10;
+    uint32_t array[len + 1];
+    int i;
+
+
+    for (i = 0; i < len; i++) {
+        array[i] = i;
+    }
+
+    // define the CRC parameters
+    mxc_crc_req_t crc_req = {
+        array, // pointer to data
+        len, // length of data
+        0 // initial crc result
+    };
+
+    MXC_CRC_Init();
+
+    MXC_CRC_SetPoly(0xf4acfb13);
+
+
+    MXC_CRC_Compute(&crc_req);
+
+    printf("CRC Result: %x\n", crc_req.resultCRC);
+
+    MXC_CRC_Shutdown();
+    print_crc_state();
+
+}
+
+void test_flash(){
+    MXC_ICC_Disable(MXC_ICC0);
+
+    uint32_t value = 0;
+    MXC_FLC_Read(TEST_ADDRESS, &value, 4);
+    printf("Initial value: %08x\n", value);
+
+    MXC_FLC_PageErase(TEST_ADDRESS);
+
+    printf("Writing magic value 0x%x to address 0x%x...\n", 0xdeadbeef, TEST_ADDRESS);
+    MXC_FLC_Write32(TEST_ADDRESS, 0xdeadbeef);
+
+    MXC_FLC_Read(TEST_ADDRESS, &value, 4);
+    printf("New value: %08x\n", value);
+}
+
+volatile int UART_FLAG = 0;
+
+void uartCallback(mxc_uart_req_t *req, int error)
+{
+    printf("in read callback, error %d\n", error);
+    UART_FLAG = error;
+}
+
+void Reading_UART_Handler();
+
+void test_uart_async(){
+
+    uint8_t data[64];
+    int error;
+
+    UART_FLAG = 1;
+
+    int idx = MXC_UART_GET_IDX(MXC_UART0);
+
+    NVIC_ClearPendingIRQ(MXC_UART_GET_IRQ(idx));
+    NVIC_DisableIRQ(MXC_UART_GET_IRQ(idx));
+    MXC_NVIC_SetVector(MXC_UART_GET_IRQ(idx), Reading_UART_Handler);
+    NVIC_EnableIRQ(MXC_UART_GET_IRQ(idx));
+
+    mxc_uart_req_t read_req;
+    read_req.uart = MXC_UART0;
+    read_req.rxData = data;
+    read_req.rxLen = 16;
+    read_req.txLen = 0;
+    read_req.callback = uartCallback;
+
+    MXC_UART_ClearRXFIFO(MXC_UART0); 
+
+    error = MXC_UART_TransactionAsync(&read_req);
+
+    if (error != E_NO_ERROR) {
+        printf("-->Error starting read: %d\n", error);
+    }
+
+    while(UART_FLAG){}
+
+    printf("got read of\n");
+
+    for(int i = 0; i < 16; i++){
+        printf("%02x ", data[i]);
+    }
+    printf("\n");
+
+    mxc_uart_req_t write_req;
+    write_req.uart = MXC_UART0;
+    write_req.txData = data;
+    write_req.txLen = 16;
+    write_req.rxLen = 0;
+    write_req.callback = uartCallback;
+
+    UART_FLAG = 1;
+    printf("writing\n");
+    error = MXC_UART_TransactionAsync(&write_req);
+    printf("after transaction\n");
+    if (error != E_NO_ERROR) {
+        printf("-->Error starting write: %d\n", error);
+    }
+
+
+    while(UART_FLAG){}
+
+    printf("finished write\n");
+    NVIC_DisableIRQ(MXC_UART_GET_IRQ(idx));
+
+
+}
+
+
 int main(){    
     printf("started\n");
     
@@ -271,13 +408,37 @@ int main(){
         int incoming = MXC_UART_ReadCharacter(MXC_UART0);
         switch (incoming)
         {
-        case 'i':
-            printf("Test ICC:\n");
-            test_icc();
+        
+        case 'c':
+            printf("Test crc\n");
+            test_crc();
             break;
+
+        case 'f':
+            printf("Test flash\n");
+            test_flash();
+            break;
+
         case 'g':
             printf("Test gcr:\n");
             print_gcr_state();
+            break;
+
+        case 'h':
+            printf("Initial gcr state:\n");
+            print_gcr_state();
+
+            MXC_SYS_Clock_Select(MXC_SYS_CLOCK_IPO);
+
+            MXC_SYS_Clock_Select(MXC_SYS_CLOCK_ISO);
+
+            printf("Final gcr state:\n");
+            print_gcr_state();
+            break;
+        
+        case 'i':
+            printf("Test ICC:\n");
+            test_icc();
             break;
         case 'r':
             MXC_SYS_Reset_Periph(31);
@@ -297,17 +458,7 @@ int main(){
                 test_uart();
             }
             break;
-        case 'c':
-            printf("Initial gcr state:\n");
-            print_gcr_state();
 
-            MXC_SYS_Clock_Select(MXC_SYS_CLOCK_IPO);
-
-            MXC_SYS_Clock_Select(MXC_SYS_CLOCK_ISO);
-
-            printf("Final gcr state:\n");
-            print_gcr_state();
-            break;
         case 'z':
             // Resetting the memory you're working in is a bad plan, hence the lack of 
             // tests for RAM0 and RAM3.
@@ -331,9 +482,20 @@ int main(){
             printf("Test aes\n");
             test_aes();
             break;
+
+        case 'y':
+            printf("Test uart_async\n");
+            test_uart_async();
         default:
             break;
         }
     }
         
+}
+
+void Reading_UART_Handler(void)
+{
+    int i = MXC_UART_AsyncHandler(MXC_UART0);
+    printf("reading UART handler called %d\n", i);
+    
 }
